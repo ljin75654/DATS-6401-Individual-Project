@@ -2,9 +2,13 @@
 Topic: Analysis of Educational/Military/Healthcare Expenditure (2013-2017)
 
 Source Data:
+
 Military - https://www.sipri.org/databases/milex
+
 Healthcare - https://data.oecd.org/healthres/health-spending.htm
+
 Educational - https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS?end=2017&start=2013
+
 GDP - https://data.worldbank.org/indicator/NY.GDP.MKTP.CD
 
 This project was completed using HTML/CSS/JavaScript on Notepad++. The files required bootstrap, animate, and fontawesome libraries.
