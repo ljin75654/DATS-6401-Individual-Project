@@ -1,0 +1,200 @@
+<!doctype html>
+<!-- military_gdp.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css" />
+
+</head>
+
+<body>
+	<div id="main">
+		<div id="header">
+			<div id="logo">
+				<div id="logo_text">
+					<h1>Military Spending vs. GDP per person<span class="logo_color"></span></h1>
+				</div>
+			</div>
+			<div id="menubar">
+				<ul id="menu">
+					<li class="selected"><a href="index.html">Home</a></li>
+					<li class="selected"><a href="spending_gdp.html">Spending GDP</a></li>
+					<li class="selected"><a href="EdH_mil.html">Education/Healthcare</a></li>
+					<li class="selected"><a href="education_gdp.html">Education</a></li>
+					<li class="selected"><a href="health_gdp.html">Healthcare</a></li>
+					<li class="selected"><a href="military_gdp.html">Military</a></li>
+					<li class="selected"><a href="geomap1.html">GEOMAP</a></li>
+					<li class="selected"><a href="country_health.html">Percent Health</a></li>
+					<li class="selected"><a href="country_education.html">Percent Education</a></li>
+				</ul>
+			</div><!-- menubar -->
+		</div><!-- header -->
+		<div id="site_content">
+			<div id="content">
+			<script type="text/javascript"
+			src="https://www.gstatic.com/charts/loader.js"></script>
+			<script type="text/javascript">
+				//load the google charts
+				google.charts.load('current',{'packages':['corechart']});
+				
+				//load the Callback function that runs when page loads
+				google.charts.setOnLoadCallback(drawAllSheets);
+				
+				function drawAllSheets() {
+					drawSheetName('militaryGDP2013', 
+								  'SELECT A,B,Q', 
+								  militaryGDP2013ResponseHandler);	
+					drawSheetName('militaryGDP2014', 
+								  'SELECT A,C,R', 
+								  militaryGDP2014ResponseHandler);
+					drawSheetName('militaryGDP2015', 
+								  'SELECT A,D,S', 
+								  militaryGDP2015ResponseHandler);
+					drawSheetName('militaryGDP2016', 
+								  'SELECT A,E,T', 
+								  militaryGDP2016ResponseHandler);
+					drawSheetName('militaryGDP2017', 
+								  'SELECT A,F,U', 
+								  militaryGDP2017ResponseHandler);
+				} //drawAllSheets
+				
+				function drawSheetName(sheetName, query, responseHandler) {
+					var queryString = encodeURIComponent(query);
+					var query = new google.visualization.Query(
+						'https://docs.google.com/spreadsheets/d/1Ff5qVhR0M5QP0szxbagO8q4REx8vvZM-KaHJ_tp9eh0/gviz/tq?sheet=' + 
+									sheetName + '&headers=1&tq=' + queryString);
+						query.send(responseHandler);
+				} //drawSheetName
+				
+				function militaryGDP2013ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:2, desc:true});
+					var options = {
+								height: 600,
+								legend: {position: 'top'},
+								bars: 'horizontal',
+								isStacked: true,
+								annotations: {alwaysOutside: true},
+								title: 'Military spending per person vs GDP per person (2013)',
+								vAxis: {title: 'Country'},
+								hAxis: {title: 'Spending ($)'}
+					};
+					
+					var chart = new google.visualization.BarChart(
+								document.getElementById('military_gdp_2013_div'));
+					
+					chart.draw(data, options);
+				} //militaryGDP2013ResponseHandler
+				
+				function militaryGDP2014ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:2, desc:true});
+					var options = {
+								height: 600,
+								legend: {position: 'top'},
+								bars: 'horizontal',
+								isStacked: true,
+								annotations: {alwaysOutside: true},
+								title: 'Military spending per person vs GDP per person (2014)',
+								vAxis: {title: 'Country'},
+								hAxis: {title: 'Spending ($)'}
+					};
+					
+					var chart = new google.visualization.BarChart(
+								document.getElementById('military_gdp_2014_div'));
+					
+					chart.draw(data, options);
+				} //militaryGDP2014ResponseHandler
+				
+				function militaryGDP2015ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:2, desc:true});
+					var options = {
+								height: 600,
+								legend: {position: 'top'},
+								bars: 'horizontal',
+								isStacked: true,
+								annotations: {alwaysOutside: true},
+								title: 'Military spending per person vs GDP per person (2015)',
+								vAxis: {title: 'Country'},
+								hAxis: {title: 'Spending ($)'}
+					};
+					
+					var chart = new google.visualization.BarChart(
+								document.getElementById('military_gdp_2015_div'));
+					
+					chart.draw(data, options);
+				} //militaryGDP2015ResponseHandler
+				
+				function militaryGDP2016ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:2, desc:true});
+					var options = {
+								height: 600,
+								legend: {position: 'top'},
+								bars: 'horizontal',
+								isStacked: true,
+								annotations: {alwaysOutside: true},
+								title: 'Military spending per person vs GDP per person (2016)',
+								vAxis: {title: 'Country'},
+								hAxis: {title: 'Spending ($)'}
+					};
+					
+					var chart = new google.visualization.BarChart(
+								document.getElementById('military_gdp_2016_div'));
+					
+					chart.draw(data, options);
+				} //militaryGDP2016ResponseHandler
+				
+				function militaryGDP2017ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:2, desc:true});
+					var options = {
+								height: 600,
+								legend: {position: 'top'},
+								bars: 'horizontal',
+								isStacked: true,
+								annotations: {alwaysOutside: true},
+								title: 'Military spending per person vs GDP per person (2017)',
+								vAxis: {title: 'Country'},
+								hAxis: {title: 'Spending ($)'}
+					};
+					
+					var chart = new google.visualization.BarChart(
+								document.getElementById('military_gdp_2017_div'));
+					
+					chart.draw(data, options);
+				} //militaryGDP2017ResponseHandler
+				
+			</script>
+			</div><!-- content -->
+		</div><!-- site_Content -->
+	</div><!-- main -->
+	
+	<h2>Military spending per person vs GDP per person (2013)</h2>
+	<div id="military_gdp_2013_div"
+	     style="width:900px; height:650px;"></div>
+		 
+	<h2>Military spending per person vs GDP per person (2014)</h2>
+	<div id="military_gdp_2014_div"
+		 style="width:900px; height:650px;"></div>
+		 
+	<h2>Military spending per person vs GDP per person (2015)</h2>
+	<div id="military_gdp_2015_div"
+	     style="width: 900px; height: 650px;"></div>
+		 
+	<h2>Military spending per person vs GDP per person (2016)</h2>
+	<div id="military_gdp_2016_div"
+		 style="width: 900px; height:650px;"></div>
+		 
+	<h2>Military spending per person vs GDP per person (2017)</h2>
+	<div id="military_gdp_2017_div"
+		 style="width: 900px; height:650px;"></div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<!-- geomap.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css" />
+
+</head>
+
+<body>
+	<script type="text/javascript"
+			src="https://www.gstatic.com/charts/loader.js"></script>
+			<script type="text/javascript">
+				//load the google charts
+				google.charts.load('current',{'packages':['geochart']});
+				google.charts.setOnLoadCallback(drawMap);
+
+				function drawMap() {
+				//2017 US Population and Crime Data per 100000    
+				var countrydata = [
+					{
+					"spending": "mil_2013",
+					"unitedstates": 639704,
+					"china": 179880.5,
+					"india": 47403.5,
+					"germany": 45930.5,
+					"unitedkingdom": 56861.8,
+					"japan": 49023.9,
+					"france": 62417.1,
+					"saudiarabia": 67020,
+					"russia": 88352.9,
+					"southkorea": 34136.6,
+					"brazil": 32874.8,
+					"australia": 24825.3,
+					"argentina": 5138,
+					"canada": 18515.7,
+					"indonesia": 8384,
+					"italy": 33891.9,
+					"mexico": 7837.6,
+					"southafrica": 4118.2,
+					"turkey": 18662.6
+				 },
+				 {
+				   "spending": "mil_2017",
+					"unitedstates": 609758,
+					"china": 228230.7,
+					"india": 63923.7,
+					"germany": 44329.3,
+					"unitedkingdom": 47193.1,
+					"japan": 45387,
+					"france": 57770.1,
+					"saudiarabia": 69413.3,
+					"russia": 66335,
+					"southkorea": 39152.5,
+					"brazil": 29283.5,
+					"australia": 27462.3,
+					"argentina": 5680.7,
+					"canada": 20567,
+					"indonesia": 8178.1,
+					"italy": 29236.4,
+					"mexico": 5781.4,
+					"southafrica": 3618.3,
+					"turkey": 18189.8
+				 },
+				 {
+				   "spending": "ed_2013",
+					"unitedstates": 825193.55,
+					"china": 0,
+					"india": 71384.84,
+					"germany": 185185.42,
+					"unitedkingdom": 153942.47,
+					"japan": 188976.62,
+					"france": 154617.15,
+					"saudiarabia": 0,
+					"russia": 52276.33,
+					"southkorea": 68512.67,
+					"brazil": 144383.49,
+					"australia": 82430.38,
+					"argentina": 30011.45,
+					"canada": 0,
+					"indonesia": 30652.05,
+					"italy": 88729.00,
+					"mexico": 59848.48,
+					"southafrica": 22048.24,
+					"turkey": 41484.23
+				 },
+				 {
+				   "spending": "ed_2017",
+					"unitedstates": 847370.31,
+					"china": 0,
+					"india": 71384.84,
+					"germany": 179839.43,
+					"unitedkingdom": 158862.40,
+					"japan": 179079.18,
+					"france": 148353.26,
+					"saudiarabia": 0,
+					"russia": 52276.33,
+					"southkorea": 71822.64,
+					"brazil": 134318.35,
+					"australia": 76671.57,
+					"argentina": 30875.25,
+					"canada": 0,
+					"indonesia": 30263.90,
+					"italy": 83735.04,
+					"mexico": 63447.81,
+					"southafrica": 21369.61,
+					"turkey": 39740.12
+				 },
+				 {
+				   "spending": "health_2013",
+					"unitedstates": 2725891.64,
+					"china": 468832.55,
+					"india": 69608.51,
+					"germany": 409586.85,
+					"unitedkingdom": 267735.08,
+					"japan": 556404.98,
+					"france": 321643.51,
+					"saudiarabia": 0,
+					"russia": 116487.36,
+					"southkorea": 85882.70,
+					"brazil": 197527.82,
+					"australia": 138076.13,
+					"argentina": 0,
+					"canada": 186713.50,
+					"indonesia": 30761.19,
+					"italy": 190721.58,
+					"mexico": 75714.66,
+					"southafrica": 28308.52,
+					"turkey": 41863.52
+				 },
+				 {
+				   "spending": "health_2017",
+					"unitedstates": 3325488.59,
+					"china": 529837.12,
+					"india": 74880.09,
+					"germany": 414520.94,
+					"unitedkingdom": 252933.76,
+					"japan": 523511.11,
+					"france": 295903.00,
+					"saudiarabia": 0,
+					"russia": 90790.48,
+					"southkorea": 115862.54,
+					"brazil": 188452.23,
+					"australia": 120868.05,
+					"argentina": 0,
+					"canada": 172098.29,
+					"indonesia": 30316.48,
+					"italy": 172216.36,
+					"mexico": 62193.98,
+					"southafrica": 27381.88,
+					"turkey": 35994.99
+				 },
+				 {
+				   "spending": "gdp_2013",
+					"unitedstates": 16691517.00,
+					"china": 9607224.48,
+					"india": 1856722.12,
+					"germany": 3752513.50,
+					"unitedkingdom": 2739818.68,
+					"japan": 5155717.06,
+					"france": 2811077.73,
+					"saudiarabia": 746647.13,
+					"russia": 2297128.04,
+					"southkorea": 1305604.98,
+					"brazil": 2472806.92,
+					"australia": 1573696.52,
+					"argentina": 552025.14,
+					"canada": 1842628.01,
+					"indonesia": 912524.14,
+					"italy": 2130491.32,
+					"mexico": 1274443.08,
+					"southafrica": 366643.22,
+					"turkey": 950579.37
+				 },
+				 {
+				   "spending": "gdp_2017",
+					"unitedstates": 19390604.00,
+					"china": 12237700.48,
+					"india": 2600818.24,
+					"germany": 3677439.13,
+					"unitedkingdom": 2622433.96,
+					"japan": 4872136.95,
+					"france": 2582501.31,
+					"saudiarabia": 686738.40,
+					"russia": 1577524.15,
+					"southkorea": 1530750.92,
+					"brazil": 2055505.50,
+					"australia": 1323421.07,
+					"argentina": 637430.33,
+					"canada": 1653042.80,
+					"indonesia": 1015539.02,
+					"italy": 1934797.94,
+					"mexico": 1150887.82,
+					"southafrica": 348871.65,
+					"turkey": 851549.30
+				 },
+				];
+				  
+				  //select the menu element
+				  select = document.getElementById("menu");
+				  
+				  //get the value of the drop down menu
+				  selection = select.value;
+				  
+				  //get the text from the menu for the chart
+				  selectiontext = select.options[select.selectedIndex];
+				  
+				  //go json and find proper measure, assign values to each state variable
+				  for(i=0; i<countrydata.length; i++) {
+					if(selection == countrydata[i].spending) {
+					
+
+				  //this draws the chart
+				var data = google.visualization.arrayToDataTable([
+				  ['Country', selectiontext],
+				  [ "United States", countrydata[i].unitedstates ],
+				  [ "China", countrydata[i].china ],
+				  [ "India", countrydata[i].india ],
+				  [ "Germany", countrydata[i].germany ],
+				  [ "United Kingdom", countrydata[i].unitedkingdom ],
+				  [ "Japan", countrydata[i].japan ],
+				  [ "France", countrydata[i].france ],
+				  [ "Saudi Arabia", countrydata[i].saudiarabia ],
+				  [ "Russia", countrydata[i].russia ],
+				  [ "South Korea", countrydata[i].southkorea ],
+				  [ "Brazil", countrydata[i].brazil ],
+				  [ "Australia", countrydata[i].australia ],
+				  [ "Argentina", countrydata[i].argentina ],
+				  [ "Canada", countrydata[i].canada ],
+				  [ "Indonesia", countrydata[i].indonesia ],
+				  [ "Italy", countrydata[i].italy ],
+				  [ "Mexico", countrydata[i].mexico ],
+				  [ "South Africa", countrydata[i].southafrica ],
+				  [ "Turkey", countrydata[i].turkey ]
+				]);
+					}
+				  }
+
+				var options = {
+				  region: 'world',
+				  displayMode: 'regions',
+				  resolution: 'countries',
+				  colorAxis: {colors: ['darkblue']},
+				};
+
+				var chart = new google.visualization.GeoChart(document.getElementById('geochart_div'));
+				chart.draw(data, options);
+			  }
+			</script>	
+</head>			
+	<h2>Spending per person vs GDP per person (2013, 2017)</h2>  
+    <form id="form1" onchange="drawMap()">
+<select id="menu">
+<option value="mil_2013">Military Spending per person (2013)</option>
+<option value="mil_2017">Military Spending per person (2017)</option>
+<option value="ed_2013">Educational Spending per person (2013)</option>
+<option value="ed_2017">Educational Spending per person (2017)</option>
+<option value="health_2013">Healthcare Spending per person (2013)</option>
+<option value="health_2017">Healthcare Spending per person (2017)</option>
+<option value="gdp_2013">GDP per person (2013)</option>
+<option value="gdp_2017">GDP per person (2017)</option>
+</select>
+</form>
+    <div id="geochart_div"
+	     style="width:900px; height:500px;"></div>
+	
+</body>
+</html>

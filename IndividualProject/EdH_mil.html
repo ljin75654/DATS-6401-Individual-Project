@@ -1,0 +1,174 @@
+<!doctype html>
+<!-- EdH_mil.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css" />
+
+</head>
+
+<body>
+	<div id="main">
+		<div id="header">
+			<div id="logo">
+				<div id="logo_text">
+					<h1>Education/Health vs. Military Spending<span class="logo_color"></span></h1>
+				</div>
+			</div>
+			<div id="menubar">
+				<ul id="menu">
+					<li class="selected"><a href="index.html">Home</a></li>
+					<li class="selected"><a href="spending_gdp.html">Spending GDP</a></li>
+					<li class="selected"><a href="EdH_mil.html">Education/Healthcare</a></li>
+					<li class="selected"><a href="education_gdp.html">Education</a></li>
+					<li class="selected"><a href="health_gdp.html">Healthcare</a></li>
+					<li class="selected"><a href="military_gdp.html">Military</a></li>
+					<li class="selected"><a href="geomap1.html">GEOMAP</a></li>
+					<li class="selected"><a href="country_health.html">Percent Health</a></li>
+					<li class="selected"><a href="country_education.html">Percent Education</a></li>
+				</ul>
+			</div><!-- menubar -->
+		</div><!-- header -->
+		<div id="site_content">
+			<div id="content">
+			<script type="text/javascript"
+			src="https://www.gstatic.com/charts/loader.js"></script>
+			<script type="text/javascript">
+				//load the google charts
+				google.charts.load('current',{'packages':['corechart']});
+				
+				//load the Callback function that runs when page loads
+				google.charts.setOnLoadCallback(drawAllSheets);
+				
+				function drawAllSheets() {
+					drawSheetName('educationHealthGDP2013', 
+								  'SELECT A,B,G,L', 
+								  educationHealthGDP2013ResponseHandler);
+					drawSheetName('educationHealthGDP2013', 
+								  'SELECT A,C,H,M', 
+								  educationHealthGDP2014ResponseHandler);
+					drawSheetName('educationHealthGDP2013', 
+								  'SELECT A,D,I,N', 
+								  educationHealthGDP2015ResponseHandler);
+					drawSheetName('educationHealthGDP2013', 
+								  'SELECT A,E,J,O', 
+								  educationHealthGDP2016ResponseHandler);			  
+					drawSheetName('educationHealthGDP2013', 
+								  'SELECT A,F,K,P', 
+								  educationHealthGDP2017ResponseHandler);			  
+				} //drawAllSheets
+				
+				function drawSheetName(sheetName, query, responseHandler) {
+					var queryString = encodeURIComponent(query);
+					var query = new google.visualization.Query(
+						'https://docs.google.com/spreadsheets/d/1v-dJXBkZ9u3T_R56UkHy8ar26nHu_rncc4fTMF7CuF0/gviz/tq?sheet=' + 
+									sheetName + '&headers=1&tq=' + queryString);
+						query.send(responseHandler);
+				} //drawSheetName
+				
+				function educationHealthGDP2013ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:1, desc:true});
+					var options = {
+								height: 400,
+								vAxis: {title: 'Spending (by million US $)'},
+								hAxis: {title: 'Country'}
+					};
+					
+					var chart = new google.visualization.ColumnChart(
+								document.getElementById('ed_health_mil_2013_div'));
+					
+					chart.draw(data, options);
+				} //educationHealthGDP2013ResponseHandler
+				
+				function educationHealthGDP2014ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:1, desc:true});
+					var options = {
+								height: 400,
+								vAxis: {title: 'Spending (by million US $)'},
+								hAxis: {title: 'Country'}
+					};
+					
+					var chart = new google.visualization.ColumnChart(
+								document.getElementById('ed_health_mil_2014_div'));
+					
+					chart.draw(data, options);
+				} //educationHealthGDP2014ResponseHandler
+				
+				function educationHealthGDP2015ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:1, desc:true});
+					var options = {
+								height: 400,
+								vAxis: {title: 'Spending (by million US $)'},
+								hAxis: {title: 'Country'}
+					};
+					
+					var chart = new google.visualization.ColumnChart(
+								document.getElementById('ed_health_mil_2015_div'));
+					
+					chart.draw(data, options);
+				} //educationHealthGDP2015ResponseHandler
+				
+				function educationHealthGDP2016ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:1, desc:true});
+					var options = {
+								height: 400,
+								vAxis: {title: 'Spending (by million US $)'},
+								hAxis: {title: 'Country'}
+					};
+					
+					var chart = new google.visualization.ColumnChart(
+								document.getElementById('ed_health_mil_2016_div'));
+					
+					chart.draw(data, options);
+				} //educationHealthGDP2016ResponseHandler
+				
+				function educationHealthGDP2017ResponseHandler(response) {
+					var data = response.getDataTable();
+					data.sort({column:1, desc:true});
+					var options = {
+								height: 400,
+								vAxis: {title: 'Spending (by million US $)'},
+								hAxis: {title: 'Country'}
+					};
+					
+					var chart = new google.visualization.ColumnChart(
+								document.getElementById('ed_health_mil_2017_div'));
+					
+					chart.draw(data, options);
+				} //educationHealthGDP2017ResponseHandler
+			</script>
+			</div><!-- content -->
+		</div><!-- site_Content -->
+	</div><!-- main -->
+	
+	<h2>Education and Health vs Military Spending (2013)</h2>
+	<div id="ed_health_mil_2013_div"
+	     style="width:950px; height:500px;"></div>
+	
+	<h2>Education and Health vs Military Spending (2014)</h2>
+	<div id="ed_health_mil_2014_div"
+	     style="width:950px; height:500px;"></div>
+	
+	<h2>Education and Health vs Military Spending (2015)</h2>
+	<div id="ed_health_mil_2015_div"
+	     style="width:950px; height:500px;"></div>
+	
+	<h2>Education and Health vs Military Spending (2016)</h2>
+	<div id="ed_health_mil_2016_div"
+	     style="width:950px; height:500px;"></div>
+	
+	<h2>Education and Health vs Military Spending (2017)</h2>
+	<div id="ed_health_mil_2017_div"
+	     style="width:950px; height:500px;"></div>
+</body>
+</html>

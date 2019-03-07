@@ -1,0 +1,278 @@
+html,body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+	font-weight: 300;
+    overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-style: normal;
+	font-weight: 300;
+}
+
+h1 {
+	font-size: 42px;
+	padding-bottom: 14px;
+	margin-bottom: 30px;
+}
+
+h2 {
+	font-size: 42px;
+	line-height: 52px;
+	margin-top: 0px;
+}
+
+h3 {
+	font-size: 26px;
+	line-height: 32px;
+	padding-bottom: 6px;
+}
+
+h4 {
+	color: #999;
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding-top: 6px;
+}
+
+h5 {
+	color: #666666;
+}
+
+strong {
+	color: #232B2B;
+	font-weight: normal;
+}
+
+p {
+    color: #888;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+}
+
+.section-btn {
+	background-color: transparent;
+	border: 3px solid #232B2B;
+	border-radius: 100px;
+	color: #232B2B;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 1.6px;
+	padding: 12px 36px;
+	margin-top: 42px;
+	transition: all 0.4s ease-in-out;
+	text-transform: uppercase;
+}
+
+.section-btn:hover {
+	background: #E3AE57;
+	border-color: transparent;
+	color: #ffffff;
+}
+
+.btn-success:focus {
+	background-color: #000;
+	border-color: transparent;
+}
+
+.parallax {
+	background-attachment: fixed !important;
+	background-size: cover !important;
+}
+
+.section-title {
+	position: relative;
+	padding-bottom: 22px;
+}
+
+#data,
+#publications {
+	position: relative;
+}
+
+#home .container,
+#data .container, 
+#publications .container {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#publications .publications-thumb {
+	padding: 22px 42px 42px 42px;
+}
+
+#publications {
+  text-align: center;
+}
+
+.background-image {
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+    width: 100%;
+    height: 100%;
+    min-height: 75vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.color-white {
+	color: #ffffff;
+}
+
+.color-yellow {
+	color: #E3AE57;
+}
+
+.bg-peach {
+	background: #f1e2d7
+}
+
+.bg-lightblue {
+	background: #ADD8E6
+}
+
+html{
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: #E3AE57;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	text-decoration: none !important;
+}
+a:hover, a:active, a:focus {
+	color: #E3AE57;
+	outline: none;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.custom-navbar {
+    margin-bottom: 0;
+    background-color: #ffffff;
+}
+
+.custom-navbar .navbar-brand {
+    color: #333;
+	text-shadow: 1px 1px #fff;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 35px;
+    letter-spacing: 1px;
+}
+
+.custom-navbar .nav li a {
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 40px;
+    transition: all 0.4s ease-in-out;
+}
+
+.custom-navbar .nav li a:hover {
+    background: transparent;
+    color: #E3AE57;
+}
+
+.custom-navbar .navbar-nav > li > a:hover,
+.custom-navbar .navbar-nav > li > a:focus {
+	background-color: transparent;
+}
+
+.custom-navbar .nav li.active > a {
+    background-color: transparent;
+    color: #E3AE57;
+}
+
+.custom-navbar .navbar-toggle {
+    border: none;
+    padding-top: 10px;
+}
+
+.custom-navbar .navbar-toggle {
+    background-color: transparent;
+}
+
+.custom-navbar .navbar-toggle .icon-bar {
+    background: #E3AE57;
+    border-color: transparent;
+}
+
+/*
+Home section
+*/
+
+#home h1 {
+	padding-bottom: 18px;
+}
+
+#home .col-md-6 {
+	background: #f1e2d7;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#home .home {
+	background: url('../images/home.jpg') no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	width: 100%;
+	height: 100vh;
+}
+
+#home .home-thumb {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 100vh;
+	padding: 0 45px 0 45px;
+}
+
+/*
+Data section
+*/
+
+#data .data-thumb,
+#data .info-thumb {
+	padding: 22px 32px 40px 60px;
+}
+
+#data span {
+	font-weight: bold;
+	display: inline-block;
+	padding-bottom: 0px;
+}
